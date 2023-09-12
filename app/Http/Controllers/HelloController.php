@@ -21,7 +21,7 @@ class HelloController extends Controller
         } else {
             $msg = 'ID/PASSを受け付けました。フォームを入力ください。';
         }
-        return view('hello.index', ['msg'=>$msg, ]);
+        return view('hello.index', ['msg'=>'フォームを入力ください。']);
     }
 
     public function post(Request $request)
