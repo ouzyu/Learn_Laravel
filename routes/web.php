@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\ViewController;
+
 use App\Http\Middleware\HelloMiddleware;
 
 Route::get('/', function () {
@@ -11,3 +14,5 @@ Route::get('/', function () {
 Route::get('/hello', 'HelloController@index');
 Route::post('/hello', 'HelloController@post');
 Route::get('/hello/view', 'HelloController@view');
+
+Route::get('/view/escape', 'ViewController@escape');
