@@ -33,4 +33,11 @@ class ViewController extends Controller
             'random' => random_int(0, 100)
         ]);
     }
+
+    public function isset()
+    {
+        return view('view.isset', [
+            'msg' => 'こんにちは、世界!',
+        ]);
+    }
 }
