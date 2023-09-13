@@ -19,4 +19,11 @@ class ViewController extends Controller
     {
         return view('view.comment');
     }
+
+    public function if()
+    {
+        return view('view.if',[
+            'random'=> random_int(0, 100)
+        ]);
+    }
 }
