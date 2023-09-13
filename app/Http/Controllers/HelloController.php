@@ -10,6 +10,13 @@ use Validator;
 
 class HelloController extends Controller
 {
+    public function view()
+    {
+        $data = ['msg'=>'こんにちは、世界！'];
+        return view('hello.view', $data);
+    }
+
+
     public function index(Request $request) 
     {
         $validator = Validator::make($request->query(), [
