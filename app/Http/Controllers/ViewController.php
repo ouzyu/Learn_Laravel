@@ -52,4 +52,9 @@ class ViewController extends Controller
             'random' => random_int(1, 5)
         ]);
     }
+
+    public function while()
+    {
+        return view('view.while');
+    }
 }
