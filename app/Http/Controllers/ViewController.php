@@ -14,4 +14,9 @@ class ViewController extends Controller
             <p>ウィングスへようこそ</p>'
         ]);
     }
+
+    public function comment()
+    {
+        return view('view.comment');
+    }
 }

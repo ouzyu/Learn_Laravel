@@ -16,3 +16,4 @@ Route::post('/hello', 'HelloController@post');
 Route::get('/hello/view', 'HelloController@view');
 
 Route::get('/view/escape', 'ViewController@escape');
+Route::get('/view/comment', 'ViewController@comment');
