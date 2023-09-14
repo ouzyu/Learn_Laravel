@@ -73,4 +73,11 @@ class ViewController extends Controller
             ]
         ]);
     }
+
+    public function foreach_loop()
+    {
+        return view('view.foreach_loop', [
+            'weeks' => ['月','火','水','木','金','土','日']
+        ]);
+    }
 }

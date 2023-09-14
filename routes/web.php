@@ -25,3 +25,4 @@ Route::get('/view/switch', 'ViewController@switch');
 Route::get('/view/while', 'ViewController@while');
 Route::get('/view/for', 'ViewController@for');
 Route::get('/view/foreach', 'ViewController@foreach');
+Route::get('/view/foreach_loop', 'ViewController@foreach_loop');
