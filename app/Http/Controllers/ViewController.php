@@ -80,4 +80,11 @@ class ViewController extends Controller
             'weeks' => ['月','火','水','木','金','土','日']
         ]);
     }
+
+    public function style_class()
+    {
+        return view('view.style_class', [
+            'isEnabled' => true
+        ]);
+    }
 }
