@@ -94,4 +94,11 @@ class ViewController extends Controller
             'isEnabled' => true
         ]);
     }
+
+    public function master()
+    {
+        return view('view.master', [
+            'msg' => 'こんにちは、世界！',
+        ]);
+    }
 }
