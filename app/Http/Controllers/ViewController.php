@@ -87,4 +87,11 @@ class ViewController extends Controller
             'isEnabled' => true
         ]);
     }
+
+    public function checked()
+    {
+        return view('view.checked', [
+            'isEnabled' => true
+        ]);
+    }
 }
