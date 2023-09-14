@@ -62,4 +62,15 @@ class ViewController extends Controller
     {
         return view('view.for');
     }
+
+    public function foreach()
+    {
+        return view('view.foreach', [
+            'member' => [
+                'name' => 'YAMADA, YOSHIHIRO',
+                'sex'=> '男',
+                'birth' => '1923-11-10',
+            ]
+        ]);
+    }
 }
