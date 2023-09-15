@@ -35,3 +35,5 @@ Route::get('/view/list', 'ViewController@list');
 
 Route::get('/route/param/{id?}', 'RouteController@param')
     ->where(['id' => '[0-9]{2,3}']);
+Route::get('/route/search/{keywd?}', 'RouteController@search')
+    ->where('keywd', '.*');
