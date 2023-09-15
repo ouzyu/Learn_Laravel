@@ -65,3 +65,8 @@ Route::redirect('/hoge', '/', 301);
 
 // Resourceルート
 Route::resource('articles', 'ArticleController');
+
+// フォールバックルート
+Route::fallback(function() {
+    return view('route.error');
+});
