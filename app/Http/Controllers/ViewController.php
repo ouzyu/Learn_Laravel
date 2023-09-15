@@ -101,4 +101,12 @@ class ViewController extends Controller
             'msg' => 'こんにちは、世界！',
         ]);
     }
+
+    public function comp()
+    {
+        $data = [
+            'title' => 'こんにちは、世界！',
+        ];
+        return view('view.comp', $data);
+    }
 }
