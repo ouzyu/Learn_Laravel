@@ -37,3 +37,8 @@ Route::get('/route/param/{id?}', 'RouteController@param')
     ->where(['id' => '[0-9]{2,3}']);
 Route::get('/route/search/{keywd?}', 'RouteController@search')
     ->where('keywd', '.*');
+
+Route::prefix('/members')->group(function() {
+    Route::get('/info', 'RouteController@info');
+    Route::get('/article', 'RouteController@article');
+});
