@@ -33,4 +33,4 @@ Route::get('/view/master', 'ViewController@master');
 Route::get('/view/comp', 'ViewController@comp');
 Route::get('/view/list', 'ViewController@list');
 
-Route::get('/route/param/{id}', 'RouteController@param');
+Route::get('/route/param/{id?}', 'RouteController@param');
