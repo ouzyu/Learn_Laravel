@@ -11,10 +11,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', 'HelloController@index');
+Route::controller(HelloController::class)->group(function() {
+    Route::get('/hello', 'index');
+    Route::get('/hello/view', 'view');
+    Route::get('/hello/list', 'list');
+});
+
 Route::post('/hello', 'HelloController@post');
-Route::get('/hello/view', 'HelloController@view');
-Route::get('/hello/list', 'HelloController@list');
 
 Route::get('/view/escape', 'ViewController@escape');
 Route::get('/view/comment', 'ViewController@comment');
