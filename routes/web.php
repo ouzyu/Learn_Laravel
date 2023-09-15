@@ -55,3 +55,9 @@ Route::view('/route', 'route.view', ['name' => 'Laravel']);
 
 // Enum型によるパラメーターの制限
 Route::get('/route/enum_param/{category}', 'RouteController@enum_param');
+
+// リダイレクト先を振り分ける 302 Found
+// Route::redirect('/hoge', '/');
+
+// 301 Moved Parmanently
+Route::redirect('/hoge', '/', 301);
