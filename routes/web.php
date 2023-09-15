@@ -49,3 +49,6 @@ Route::prefix('/members')->group(function() {
 Route::namespace('Main')->group(function() {
     Route::get('/route/ns', 'RouteController@ns');
 });
+
+// アクションの省略
+Route::view('/route', 'route.view', ['name' => 'Laravel']);
