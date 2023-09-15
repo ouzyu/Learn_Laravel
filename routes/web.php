@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\ArticleController;
 
 use App\Http\Middleware\HelloMiddleware;
 
@@ -61,3 +62,6 @@ Route::get('/route/enum_param/{category}', 'RouteController@enum_param');
 
 // 301 Moved Parmanently
 Route::redirect('/hoge', '/', 301);
+
+// Resourceルート
+Route::resource('articles', 'ArticleController');
