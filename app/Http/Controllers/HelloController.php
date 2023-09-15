@@ -8,6 +8,8 @@ use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
 use Validator;
 
+use App\Models\Book;
+
 class HelloController extends Controller
 {
     public function view()
@@ -60,5 +62,13 @@ class HelloController extends Controller
             return redirect('/hello')->withErrors($validator)->withInput();
         }
         return view('hello.index', ['msg'=>'正しく入力されました！']);
+    }
+
+    public function list()
+    {
+        $data = [
+            'records' => Book::all()
+        ];
+        return view('hello.list', $data);
     }
 }
