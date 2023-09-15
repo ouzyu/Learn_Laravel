@@ -52,3 +52,6 @@ Route::namespace('Main')->group(function() {
 
 // アクションの省略
 Route::view('/route', 'route.view', ['name' => 'Laravel']);
+
+// Enum型によるパラメーターの制限
+Route::get('/route/enum_param/{category}', 'RouteController@enum_param');

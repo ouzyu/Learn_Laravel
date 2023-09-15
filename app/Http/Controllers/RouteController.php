@@ -18,4 +18,16 @@ class RouteController extends Controller
     {
         return '検索ワード'.$keywd;
     }
+
+    public function enum_param(Category $category)
+    {
+        return $category->value;
+    } 
+}
+
+enum Category: string
+{
+    case Language = 'lang';
+    case Framework = 'fw';
+    case Tools = 'tools';
 }
