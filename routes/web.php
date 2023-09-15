@@ -45,3 +45,7 @@ Route::prefix('/members')->group(function() {
     Route::get('/info', 'RouteController@info');
     Route::get('/article', 'RouteController@article');
 });
+
+Route::namespace('Main')->group(function() {
+    Route::get('/route/ns', 'RouteController@ns');
+});
