@@ -106,6 +106,7 @@ class ViewController extends Controller
     {
         $data = [
             'title' => 'こんにちは、世界！',
+            'comp' => 'my-alert',
         ];
         return view('view.comp', $data);
     }
