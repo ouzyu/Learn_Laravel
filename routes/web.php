@@ -31,3 +31,4 @@ Route::get('/view/style_class', 'ViewController@style_class');
 Route::get('/view/checked', 'ViewController@checked');
 Route::get('/view/master', 'ViewController@master');
 Route::get('/view/comp', 'ViewController@comp');
+Route::get('/view/list', 'ViewController@list');

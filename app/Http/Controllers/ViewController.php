@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Book;
+
 class ViewController extends Controller
 {
     public function escape()
@@ -109,5 +111,13 @@ class ViewController extends Controller
             'comp' => 'my-alert',
         ];
         return view('view.comp', $data);
+    }
+
+    public function list()
+    {
+        $data = [
+            'records' => Book::all()
+        ];
+        return view('view.list', $data);
     }
 }
