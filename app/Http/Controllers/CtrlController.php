@@ -62,4 +62,9 @@ class CtrlController extends Controller
     {
         return redirect()->away('https://wings.msn.to/');
     }
+
+    public function index(Request $req)
+    {
+        return 'リクエストパス:'.$req->path();
+    }
 }
