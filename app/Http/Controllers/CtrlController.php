@@ -30,4 +30,11 @@ class CtrlController extends Controller
         ])
         ->withCallback('callback');
     }
+
+    public function outFile()
+    {
+        return response()
+        ->download('C:/data/data_log.csv', 'download.csv',
+        ['content-type' => 'text/csv']);
+    }
 }

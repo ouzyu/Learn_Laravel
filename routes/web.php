@@ -22,6 +22,7 @@ Route::controller(CtrlController::class)->group(function() {
     Route::get('/ctrl/plain', 'plain');
     Route::get('/ctrl/header', 'header');
     Route::get('/ctrl/outJson', 'outJson');
+    Route::get('/ctrl/outFile', 'outFile');
 });
 
 Route::post('/hello', 'HelloController@post');
