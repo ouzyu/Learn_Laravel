@@ -48,6 +48,10 @@ class Kernel extends HttpKernel
         'helo' => [
             \App\Http\Middleware\HelloMiddleware::class,
         ],
+
+        'debug' => [
+            \App\Http\Middleware\LogMiddleware::class,
+        ],
     ];
 
     /**

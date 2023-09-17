@@ -32,7 +32,10 @@ Route::controller(CtrlController::class)->group(function() {
     Route::post('/ctrl/result', 'result');
     Route::get('/ctrl/upload', 'upload');
     Route::post('/ctrl/uploadfile', 'uploadfile');
-    Route::get('/ctrl/middle', 'middle');
+});
+
+Route::group(['middleware' => ['debug']], function() {
+    Route::get('/ctrl/middle', 'CtrlController@middle');
 });
 
 Route::post('/hello', 'HelloController@post');
