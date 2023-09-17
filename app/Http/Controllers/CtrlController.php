@@ -12,4 +12,11 @@ class CtrlController extends Controller
         return response('こんにちは、世界!', 200)
         ->header('Content-Type', 'text/plain');
     }
+
+    public function header()
+    {
+        return response()
+        ->view('ctrl.header', ['msg' => 'こんにちは、世界!'], 200)
+        ->header('Content-Type', 'text/xml');
+    }
 }
