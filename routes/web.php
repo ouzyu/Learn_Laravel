@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\ArticleController;
-
+use App\Http\Controllers\CtrlController;
 use App\Http\Middleware\HelloMiddleware;
 
 Route::get('/', function () {
@@ -16,6 +16,10 @@ Route::controller(HelloController::class)->group(function() {
     Route::get('/hello', 'index');
     Route::get('/hello/view', 'view');
     Route::get('/hello/list', 'list');
+});
+
+Route::controller(CtrlController::class)->group(function() {
+    Route::get('/ctrl/plain', 'plain');
 });
 
 Route::post('/hello', 'HelloController@post');
@@ -70,3 +74,4 @@ Route::resource('articles', 'ArticleController');
 Route::fallback(function() {
     return view('route.error');
 });
+
