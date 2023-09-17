@@ -38,6 +38,10 @@ Route::group(['middleware' => ['debug']], function() {
     Route::get('/ctrl/middle', 'CtrlController@middle');
 });
 
+Route::controller(StateController::class)->group(function() {
+    Route::get('/state/recCookie', 'recCookie');
+});
+
 Route::post('/hello', 'HelloController@post');
 
 Route::get('/view/escape', 'ViewController@escape');
