@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class CtrlController extends Controller
 {
@@ -78,6 +79,29 @@ class CtrlController extends Controller
         $name = $req->name;
         return view('ctrl.form', [
             'result' => 'こんにちは、'.$name.'さん!'
+        ]);
+    }
+
+    public function upload()
+    {
+        return view('ctrl.upload', ['result' => '']);
+    }
+
+    public function uploadfile(Request $req)
+    {
+        if (!$req->hasFile('upfile')) {
+            return 'ファイルを指定してください。';
+        }
+        
+        $file = $req->upfile;
+        if (!$file->isValid()) {
+            return 'アップロードに失敗しました。';
+        }
+
+        $name = $file->getClientOriginalName();
+        $file->storeAs('files', '$name');
+        return view('ctrl.upload', [
+            'result' => $name.'をアップロードしました。'
         ]);
     }
 }
