@@ -27,6 +27,7 @@ class CtrlController extends Controller
             'name' => 'Yoshihiro, YAMADA',
             'sex' => 'male',
             'age' => 18,
-        ]);
+        ])
+        ->withCallback('callback');
     }
 }
