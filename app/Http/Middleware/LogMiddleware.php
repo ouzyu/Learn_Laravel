@@ -17,15 +17,8 @@ class LogMiddleware
     {
         file_put_contents('C:/data/access.log', date('Y-m-d H:i:s')."\n", FILE_APPEND);
 
-        $request->merge([
-            'title' => '速習Laravel',
-            'author' => 'YAMADA, Yoshihiro',
-        ]);
-        return $next($request);
-    }
-
-    public function middle()
-    {
-        return 'log is recorded!!';
+        $response = $next($request);
+        $response->setContent(mb_strtoupper($response->content()));
+        return $response;
     }
 }
