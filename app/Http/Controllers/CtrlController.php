@@ -13,7 +13,7 @@ class CtrlController extends Controller
         $this->middleware(function($request, $next) {
             // ミドルウェア
             return $next($request);
-        });
+        })->only(['basic', 'basic2']);
     }
 
     public function plain()
