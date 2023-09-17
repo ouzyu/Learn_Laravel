@@ -19,4 +19,14 @@ class CtrlController extends Controller
         ->view('ctrl.header', ['msg' => 'こんにちは、世界!'], 200)
         ->header('Content-Type', 'text/xml');
     }
+
+    public function outJson()
+    {
+        return response()
+        ->json([
+            'name' => 'Yoshihiro, YAMADA',
+            'sex' => 'male',
+            'age' => 18,
+        ]);
+    }
 }
