@@ -67,4 +67,17 @@ class CtrlController extends Controller
     {
         return 'リクエストパス:'.$req->path();
     }
+
+    public function form()
+    {
+        return view('ctrl.form', ['result'=>'']);
+    }
+
+    public function result(Request $req)
+    {
+        $name = $req->name;
+        return view('ctrl.form', [
+            'result' => 'こんにちは、'.$name.'さん!'
+        ]);
+    }
 }
