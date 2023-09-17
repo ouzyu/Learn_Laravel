@@ -15,7 +15,8 @@ Route::get('/', function () {
 Route::controller(HelloController::class)->group(function() {
     Route::get('/hello', 'index');
     Route::get('/hello/view', 'view');
-    Route::get('/hello/list', 'list');
+    Route::get('/hello/list', 'list')
+    ->name('list');
 });
 
 Route::controller(CtrlController::class)->group(function() {

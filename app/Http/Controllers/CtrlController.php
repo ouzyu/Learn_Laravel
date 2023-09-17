@@ -60,6 +60,6 @@ class CtrlController extends Controller
 
     public function redirectBasic()
     {
-        return redirect('hello/list');
+        return redirect()->route('list');
     }
 }
