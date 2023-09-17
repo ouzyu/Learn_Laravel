@@ -24,6 +24,7 @@ Route::controller(CtrlController::class)->group(function() {
     Route::get('/ctrl/outJson', 'outJson');
     Route::get('/ctrl/outFile', 'outFile');
     Route::get('/ctrl/outCsv', 'outCsv');
+    Route::get('/ctrl/outImage', 'outImage');
 });
 
 Route::post('/hello', 'HelloController@post');

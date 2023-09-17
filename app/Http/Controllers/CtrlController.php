@@ -51,4 +51,10 @@ class CtrlController extends Controller
             );
         }, 'download.csv', ['content-type' => 'text/csv']);
     }
+
+    public function outImage()
+    {
+        return response()
+        ->file('C:/data/wings.png', ['content->type' => 'image/png']);
+    }
 }
