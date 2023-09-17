@@ -37,4 +37,18 @@ class CtrlController extends Controller
         ->download('C:/data/data_log.csv', 'download.csv',
         ['content-type' => 'text/csv']);
     }
+
+    public function outCsv()
+    {
+        return response()
+        ->streamDownload(function() {
+            print(
+                "1,2022/10/1,123\n".
+                "2,2022/10/2,116\n".
+                "3,2022/10/3,98\n".
+                "4,2022/10/4,102\n".
+                "5,2022/10/5,134\n"
+            );
+        }, 'download.csv', ['content-type' => 'text/csv']);
+    }
 }
