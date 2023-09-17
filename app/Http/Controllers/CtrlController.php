@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Redis;
 
 class CtrlController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function($request, $next) {
+            // ミドルウェア
+            return $next($request);
+        });
+    }
+
     public function plain()
     {
         return response('こんにちは、世界!', 200)
