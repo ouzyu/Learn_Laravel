@@ -7,6 +7,7 @@ use App\Http\Controllers\ViewController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CtrlController;
 use App\Http\Middleware\HelloMiddleware;
+use App\Http\Middleware\LogMiddleware;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,6 +32,8 @@ Route::controller(CtrlController::class)->group(function() {
     Route::post('/ctrl/result', 'result');
     Route::get('/ctrl/upload', 'upload');
     Route::post('/ctrl/uploadfile', 'uploadfile');
+    Route::get('/ctrl/middle', 'middle')
+        ->middleware(LogMiddleware::class);
 });
 
 Route::post('/hello', 'HelloController@post');
