@@ -49,7 +49,8 @@ Route::get('/view/comp', 'ViewController@comp');
 Route::get('/view/list', 'ViewController@list');
 
 Route::get('/route/param/{id?}', 'RouteController@param')
-    ->where(['id' => '[0-9]{2,3}']);
+    ->where(['id' => '[0-9]{2,3}'])
+    ->name('param');
 Route::get('/route/search/{keywd?}', 'RouteController@search')
     ->where('keywd', '.*');
 
