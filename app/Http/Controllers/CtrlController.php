@@ -57,4 +57,9 @@ class CtrlController extends Controller
         return response()
         ->file('C:/data/wings.png', ['content->type' => 'image/png']);
     }
+
+    public function redirectBasic()
+    {
+        return redirect('hello/list');
+    }
 }

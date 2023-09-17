@@ -25,6 +25,7 @@ Route::controller(CtrlController::class)->group(function() {
     Route::get('/ctrl/outFile', 'outFile');
     Route::get('/ctrl/outCsv', 'outCsv');
     Route::get('/ctrl/outImage', 'outImage');
+    Route::get('/ctrl/redirectBasic', 'redirectBasic');
 });
 
 Route::post('/hello', 'HelloController@post');
