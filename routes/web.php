@@ -6,6 +6,7 @@ use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CtrlController;
+use App\Http\Controllers\RecordController;
 use App\Http\Middleware\HelloMiddleware;
 use App\Http\Middleware\LogMiddleware;
 
@@ -43,6 +44,10 @@ Route::controller(StateController::class)->group(function() {
     Route::get('/state/readcookie', 'readcookie');
     Route::get('/state/session', 'session');
     Route::get('/state/session2', 'session2');
+});
+
+Route::controller(RecordController::class)->group(function() {
+    Route::get('/record/find', 'find');
 });
 
 Route::post('/hello', 'HelloController@post');
