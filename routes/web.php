@@ -54,6 +54,7 @@ Route::controller(RecordController::class)->group(function() {
     Route::get('/record/wherenull', 'wherenull');
     Route::get('/record/whereyear', 'whereyear');
     Route::get('/record/whereand', 'whereand');
+    Route::get('/record/orwhere', 'orwhere');
 });
 
 Route::post('/hello', 'HelloController@post');
