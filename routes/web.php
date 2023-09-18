@@ -41,6 +41,8 @@ Route::group(['middleware' => ['debug']], function() {
 Route::controller(StateController::class)->group(function() {
     Route::get('/state/recCookie', 'recCookie');
     Route::get('/state/readcookie', 'readcookie');
+    Route::get('/state/session', 'session');
+    Route::get('/state/session2', 'session2');
 });
 
 Route::post('/hello', 'HelloController@post');
