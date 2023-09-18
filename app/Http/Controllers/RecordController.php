@@ -30,4 +30,10 @@ class RecordController extends Controller
         $result = Book::whereBetween('price', [1000, 3000])->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function wherenull()
+    {
+        $result = Book::whereNull('publisher')->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }
