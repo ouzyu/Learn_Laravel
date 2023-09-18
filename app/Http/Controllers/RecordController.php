@@ -42,4 +42,10 @@ class RecordController extends Controller
         $result = Book::whereyear('published', '<', '2022')->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function whereand()
+    {
+        $result = Book::where('publisher', '走跳社')->where('price', '<', 3000)->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }
