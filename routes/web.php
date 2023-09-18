@@ -29,7 +29,7 @@ Route::controller(CtrlController::class)->group(function() {
     Route::get('/ctrl/outImage', 'outImage');
     Route::get('/ctrl/redirectBasic', 'redirectBasic');
     Route::get('/ctrl/form', 'form');
-    Route::post('/ctrl/result', 'result');
+    Route::get('/ctrl/result', 'result');
     Route::get('/ctrl/upload', 'upload');
     Route::post('/ctrl/uploadfile', 'uploadfile');
 });
