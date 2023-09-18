@@ -24,4 +24,10 @@ class RecordController extends Controller
         $result = Book::whereIn('publisher', ['ジャパンIT', '走跳社', 'IT Emotion'])->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function wherebetween()
+    {
+        $result = Book::whereBetween('price', [1000, 3000])->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }
