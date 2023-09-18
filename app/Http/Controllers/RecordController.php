@@ -15,7 +15,7 @@ class RecordController extends Controller
 
     public function where()
     {
-        $result = Book::where('price', '<', 3000)->get();
+        $result = Book::where('title', 'LIKE', '%Java%')->get();
         return view('hello.list', ['records' => $result]);
     }
 }
