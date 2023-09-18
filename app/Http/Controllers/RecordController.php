@@ -36,4 +36,10 @@ class RecordController extends Controller
         $result = Book::whereNull('publisher')->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function whereyear()
+    {
+        $result = Book::whereyear('published', '2022')->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }

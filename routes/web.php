@@ -52,6 +52,7 @@ Route::controller(RecordController::class)->group(function() {
     Route::get('/record/wherein', 'wherein');
     Route::get('/record/wherebetween', 'wherebetween');
     Route::get('/record/wherenull', 'wherenull');
+    Route::get('/record/whereyear', 'whereyear');
 });
 
 Route::post('/hello', 'HelloController@post');
