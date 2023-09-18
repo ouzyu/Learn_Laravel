@@ -15,7 +15,7 @@ class RecordController extends Controller
 
     public function where()
     {
-        $result = Book::where('publisher', '走跳社')->first();
-        return $result->title;
+        $result = Book::where('price', '<', 3000)->get();
+        return view('hello.list', ['records' => $result]);
     }
 }
