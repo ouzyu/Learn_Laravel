@@ -39,7 +39,7 @@ class RecordController extends Controller
 
     public function whereyear()
     {
-        $result = Book::whereyear('published', '2022')->get();
+        $result = Book::whereyear('published', '<', '2022')->get();
         return view('hello.list', ['records' => $result]);
     }
 }
