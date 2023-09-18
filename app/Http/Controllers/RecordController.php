@@ -12,4 +12,10 @@ class RecordController extends Controller
     {
         return Book::find(1)->title;
     }
+
+    public function where()
+    {
+        $result = Book::where('publisher', '走跳社')->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }
