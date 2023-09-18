@@ -49,6 +49,7 @@ Route::controller(StateController::class)->group(function() {
 Route::controller(RecordController::class)->group(function() {
     Route::get('/record/find', 'find');
     Route::get('/record/where', 'where');
+    Route::get('/record/wherein', 'wherein');
 });
 
 Route::post('/hello', 'HelloController@post');
