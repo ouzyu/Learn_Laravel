@@ -60,4 +60,10 @@ class RecordController extends Controller
         $result = Book::whereRaw('publisher = ? AND price < ?', ['走跳社', 3000])->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function orderby()
+    {
+        $result = Book::orderby('price', 'desc')->orderby('published', 'asc')->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }
