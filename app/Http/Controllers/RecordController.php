@@ -54,4 +54,10 @@ class RecordController extends Controller
         $result = Book::where('publisher', '走跳社')->orwhere('price', '<', 2500)->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function whereraw()
+    {
+        $result = Book::whereRaw('publisher = ? AND price < ?', ['走跳社', 3000])->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }
