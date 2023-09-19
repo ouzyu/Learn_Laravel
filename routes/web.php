@@ -60,6 +60,7 @@ Route::controller(RecordController::class)->group(function() {
     Route::get('/record/offsetLimit', 'offsetLimit');
     Route::get('/record/select', 'select');
     Route::get('/record/groupby', 'groupby');
+    Route::get('/record/having', 'having');
 });
 
 Route::post('/hello', 'HelloController@post');
