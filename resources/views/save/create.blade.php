@@ -10,13 +10,16 @@
             @endforeach
         </ul>
     @endif
-    
+
     <form action="/save" method="POST">
         @csrf
         <div class="pl-2">
             <label for="isbn" id="isbn">ISBNコード:</label><br>
-            <input type="text" id="isbn" name="isbn" size="15" value="{{ old('isbn') }}" />
+            <input type="text" id="isbn" name="isbn" size="15" value="{{ old('isbn') }}" class="@error('isbn') bg-danger @enderror"/>
         </div>
+        @error('isbn')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
 
         <div class="pl-2">
             <label for="title" id="title">書名:</label><br>
