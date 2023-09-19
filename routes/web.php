@@ -65,6 +65,7 @@ Route::controller(RecordController::class)->group(function() {
     Route::get('/record/scope', 'scope');
     Route::get('/record/dump', 'dump');
     Route::get('/record/dd', 'dd');
+    Route::get('/record/hasmany', 'hasmany');
 });
 
 Route::post('/hello', 'HelloController@post');

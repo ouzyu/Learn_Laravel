@@ -123,4 +123,11 @@ class RecordController extends Controller
         ->selectRaw('publisher, AVG(price) AS price_avg')->dd()->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function hasmany()
+    {
+        return view('record.hasmany', [
+            'book' => Book::find(1)
+        ]);
+    }
 }
