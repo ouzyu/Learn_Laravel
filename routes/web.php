@@ -7,6 +7,7 @@ use App\Http\Controllers\ViewController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CtrlController;
 use App\Http\Controllers\RecordController;
+use App\Http\Controllers\SaveController;
 use App\Http\Middleware\HelloMiddleware;
 use App\Http\Middleware\LogMiddleware;
 
@@ -66,6 +67,11 @@ Route::controller(RecordController::class)->group(function() {
     Route::get('/record/dump', 'dump');
     Route::get('/record/dd', 'dd');
     Route::get('/record/hasmany', 'hasmany');
+});
+
+Route::controller(SaveController::class)->group(function() {
+    Route::get('/save/create', 'create');
+    Route::post('/save', 'store');
 });
 
 Route::post('/hello', 'HelloController@post');
