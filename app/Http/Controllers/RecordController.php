@@ -100,4 +100,10 @@ class RecordController extends Controller
         // ->avg(), ->count(), ->max(), ->min()
         return view('hello.list', ['records' => $result]);
     }
+
+    public function scope()
+    {
+        $result = Book::published('走跳社')->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }
