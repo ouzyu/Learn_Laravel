@@ -72,4 +72,10 @@ class RecordController extends Controller
         $result = Book::orderby('published', 'desc')->offset(2)->limit(3)->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function select()
+    {
+        $result = Book::select('title', 'publisher')->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }

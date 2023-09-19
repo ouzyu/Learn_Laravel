@@ -58,6 +58,7 @@ Route::controller(RecordController::class)->group(function() {
     Route::get('/record/whereraw', 'whereraw');
     Route::get('/record/orderby', 'orderby');
     Route::get('/record/offsetLimit', 'offsetLimit');
+    Route::get('/record/select', 'select');
 });
 
 Route::post('/hello', 'HelloController@post');
