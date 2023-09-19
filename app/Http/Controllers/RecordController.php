@@ -115,4 +115,12 @@ class RecordController extends Controller
         ->selectRaw('publisher, AVG(price) AS price_avg')->dump()->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function dd()
+    {
+        $result = Book::groupBy('publisher')
+        ->having('price_avg', '<', 2500)
+        ->selectRaw('publisher, AVG(price) AS price_avg')->dd()->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }

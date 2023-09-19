@@ -64,6 +64,7 @@ Route::controller(RecordController::class)->group(function() {
     Route::get('/record/max', 'max');
     Route::get('/record/scope', 'scope');
     Route::get('/record/dump', 'dump');
+    Route::get('/record/dd', 'dd');
 });
 
 Route::post('/hello', 'HelloController@post');
