@@ -66,4 +66,10 @@ class RecordController extends Controller
         $result = Book::orderby('price', 'desc')->orderby('published', 'asc')->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function offsetLimit()
+    {
+        $result = Book::orderby('published', 'desc')->offset(2)->limit(3)->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }
