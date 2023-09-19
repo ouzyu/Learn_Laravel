@@ -74,6 +74,8 @@ Route::controller(SaveController::class)->group(function() {
     Route::post('/save', 'store');
     Route::get('/save/{id}/edit', 'edit');
     Route::patch('/save/{id}', 'update');
+    Route::get('/save/{id}', 'show');
+    Route::delete('/save/{id}', 'destroy');
 });
 
 Route::post('/hello', 'HelloController@post');

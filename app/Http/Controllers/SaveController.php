@@ -33,4 +33,18 @@ class SaveController extends Controller
         $b->fill($req->except('_token', '_method'))->save();
         return redirect('hello/list');
     }
+
+    public function show($id)
+    {
+        return view('save.show', [
+            'b' => Book::findOrFail($id)
+        ]);
+    }
+
+    public function destroy($id)
+    {
+        $b = Book::findOrFail($id);
+        $b->delete();
+        return redirect('hello/list');
+    }
 }
