@@ -72,6 +72,8 @@ Route::controller(RecordController::class)->group(function() {
 Route::controller(SaveController::class)->group(function() {
     Route::get('/save/create', 'create');
     Route::post('/save', 'store');
+    Route::get('/save/{id}/edit', 'edit');
+    Route::patch('/save/{id}', 'update');
 });
 
 Route::post('/hello', 'HelloController@post');
