@@ -93,4 +93,11 @@ class RecordController extends Controller
         ->selectRaw('publisher, AVG(price) AS price_avg')->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function max()
+    {
+        $result = Book::where('publisher', '走跳社')->max('price');
+        // ->avg(), ->count(), ->max(), ->min()
+        return view('hello.list', ['records' => $result]);
+    }
 }
