@@ -106,4 +106,13 @@ class RecordController extends Controller
         $result = Book::published('走跳社')->get();
         return view('hello.list', ['records' => $result]);
     }
+    
+
+    public function dump()
+    {
+        $result = Book::groupBy('publisher')
+        ->having('price_avg', '<', 2500)
+        ->selectRaw('publisher, AVG(price) AS price_avg')->dump()->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }

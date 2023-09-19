@@ -63,6 +63,7 @@ Route::controller(RecordController::class)->group(function() {
     Route::get('/record/having', 'having');
     Route::get('/record/max', 'max');
     Route::get('/record/scope', 'scope');
+    Route::get('/record/dump', 'dump');
 });
 
 Route::post('/hello', 'HelloController@post');
