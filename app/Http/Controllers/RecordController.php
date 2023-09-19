@@ -78,4 +78,11 @@ class RecordController extends Controller
         $result = Book::select('title', 'publisher')->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function groupby()
+    {
+        $result = Book::groupBy('publisher')
+        ->selectRaw('publisher, AVG(price) AS price_avg')->get();
+        return view('hello.list', ['records' => $result]);
+    }
 }
